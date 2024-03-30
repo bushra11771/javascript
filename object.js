@@ -30,7 +30,7 @@ var company = {
     // function are first class data 
     // functions are object 
 function multiply(x, y) {
-  return x+y;
+  return x*y;
 }
 
 console.log(multiply(5,3));
@@ -42,7 +42,7 @@ console.log(multiply.version)
   //  Function factory 
   function makeMultiplier(multiplier)  {
     var myFunc = function (x) {
-      return multiplier + x;
+      return multiplier * x;
     };
     return myFunc;
 
@@ -70,4 +70,86 @@ console.log(multiply.version)
 
   result = doOprationOn(100, doubleAll);
   console.log(result)
+
+
+                //  FUnction Constructor, Prototype and 'this' keyword 
+
+              function test() {
+                console.log("function execution!");
+                console.log(this);
+                this.myName = "Bushra"
+              }
+              test();
+              console.log(window.myName)
+
+
+
+      // Function Constructor 
+
+      function Circle (radius) {
+        console.log(this)
+        this.radius = radius
+
+        this.getArea =
+         function() {
+
+          return Math.PI * Math.pow(this.radius, 2)
+        }
+
+
+          //  Prototype 
+          Circle.prototype.getArea =
+          function () {
+            return Math.PI * Math.pow(this.radius, 2)
+          }
+      }
+
+var myCircle = new Circle(10);
+console.log("myCircle")
+
+
+var myOtherCircle = new circle(20);
+console.log(myOtherCircle)
+
+
+// Methodes are in javascript are just function 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
